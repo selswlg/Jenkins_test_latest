@@ -6,9 +6,9 @@ pipeline {
     }
 
     environment {
-		    dockerId = "rkwoals524"
-        registryCredential = "Jenkins_CI_Test"
-        dockerImage = "${dockerId}/jaemin"
+		    dockerId = "sjaeehoonllee"
+        registryCredential = "root_docker"
+        dockerImage = "${dockerId}/jaehoon"
 		    job_name = "${JOB_NAME}"
         appImage = ""
     }
@@ -18,9 +18,9 @@ pipeline {
         stage('Prepare') {
           steps {
             echo 'Clonning Repository'
-            git url: 'https://github.com/AtTheFoodTruck/backend.git',
+            git url: 'https://github.com/selswlg/Jenkins_test_latest.git',
               branch: 'main',
-              credentialsId: 'jenkins-github-token'
+              credentialsId: 'jenkins_test_key'
             }
             post {
              success { 
@@ -58,7 +58,7 @@ pipeline {
             echo 'Bulid Docker'
             dir ("../${job_name}"){
               script {
-                appImage = docker.build("${dockerId}/jaemin")
+                appImage = docker.build("${dockerId}/jaehoon")
               }
             }
           }

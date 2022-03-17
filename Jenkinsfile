@@ -28,7 +28,7 @@ podTemplate(label: 'docker-build',
   ]
 ) {
     node('docker-build') {
-		# docker Credential ID
+		// docker Credential ID
         def dockerHubCred = 'Jenkins_CI_Test'
         def appImage
         

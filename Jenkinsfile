@@ -29,11 +29,11 @@ podTemplate(label: 'docker-build',
 ) {
     node('docker-build') {
 		# docker Credential ID
-        def dockerHubCred = 'Jenkins_CI_Test'
+        def dockerHubCred = 'root_docker'
         def appImage
         
         stage('Checkout'){
-			echo 'Git Checkout'0
+			echo 'Git Checkout'
             container('git'){
                 checkout scm
             }

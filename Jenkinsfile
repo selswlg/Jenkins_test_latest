@@ -36,7 +36,7 @@ pipeline {
         stage('Bulid Gradle') {
           agent any
           steps {
-            echo 'Bulid Gradle'
+            echo 'Build Gradle'
             dir ("../${job_name}"){
                 sh """
                 sudo chmod 777 gradlew

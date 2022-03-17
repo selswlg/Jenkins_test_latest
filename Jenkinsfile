@@ -28,8 +28,13 @@ podTemplate(label: 'docker-build',
   ]
 ) {
     node('docker-build') {
+<<<<<<< HEAD
 		# docker Credential ID
         def dockerHubCred = 'root_docker'
+=======
+		// docker Credential ID
+        def dockerHubCred = 'Jenkins_CI_Test'
+>>>>>>> 7b2f23fa41390f010e6b0c38056a4788947ebae0
         def appImage
         
         stage('Checkout'){
@@ -55,7 +60,7 @@ podTemplate(label: 'docker-build',
             container('docker'){
 				script{
 					appImage.inside {
-						# appImage = docker build -t ${DOCKER_IMAGE_NAME}/${JOB_NAME} .
+						// appImage = docker build -t ${DOCKER_IMAGE_NAME}/${JOB_NAME} .
 						appImage = docker.build("${DOCKER_IMAGE_NAME}/${JOB_NAME}")
 					}
 				}

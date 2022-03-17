@@ -55,7 +55,7 @@ podTemplate(label: 'docker-build',
             container('docker'){
 				script{
 					appImage.inside {
-						# appImage = docker build -t ${DOCKER_IMAGE_NAME}/${JOB_NAME} .
+						// appImage = docker build -t ${DOCKER_IMAGE_NAME}/${JOB_NAME} .
 						appImage = docker.build("${DOCKER_IMAGE_NAME}/${JOB_NAME}")
 					}
 				}

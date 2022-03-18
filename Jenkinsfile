@@ -33,7 +33,7 @@ pipeline {
         }
 
         // gradle build
-        stage('Bulid Gradle') {
+        stage('Build Gradle') {
           agent any
           steps {
             echo 'Build Gradle'
@@ -52,10 +52,10 @@ pipeline {
         }
         
         // docker build
-        stage('Bulid Docker') {
+        stage('Build Docker') {
           agent any
           steps {			
-            echo 'Bulid Docker'
+            echo 'Build Docker'
             dir ("../${job_name}"){
               script {
                 appImage = docker.build("${dockerId}/jaehoon")

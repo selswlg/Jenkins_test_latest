@@ -39,7 +39,7 @@ pipeline {
             echo 'Build Gradle'
             dir ("../${job_name}"){
                 sh """
-                sudo chmod +x gradlew 
+                chmod 777 gradlew 
                 gradlew clean build --exclude-task test
                 """
             }
